@@ -1,1 +1,1 @@
-web: greenlet app:app
+web: python app:app
