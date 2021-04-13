@@ -1,0 +1,287 @@
+<html>
+
+<head>
+
+    <title>Heart Attack</title>
+
+</head>
+
+
+<body>
+
+    <div style = "color: darkcyan">
+        
+        <form action = "/predict" method = "post">
+        
+            <h2>Heart Attack Disease</h2>
+            
+            <!-- Age -->
+            <h3>What is your age?</h3><input type = "number" name = "age", id = "age" required = "required"><br>
+            
+            <!--Sex -->
+            <h3>What is your gender?</h3><select name = "sex" id = "sex" required = "required">
+                <option value = "0">Male</option>
+                <option value = "1">Female</option>
+                </select><br>
+
+            <!-- Chest Pain -->
+           <h3>Which kind of chest pain do you have?</h3><select name = "chest_pain" id = "chest_pain" required = "required">
+                <option value = "0">0</option>
+                <option value = "1">1</option>
+                <option value = "2">2</option>
+                <option value = "3">3</option>
+                </select>
+                
+            <!-- Blood Pressure -->
+            <h3>Blood Pressure? (mm Hg)</h3><input type = "number" name = "blood_pressure" id = "blood_pressure" required = "required">
+            
+            <!-- Cholesterol -->
+            <h3>What is your Cholesterol ? (mg/dl)</h3><input type = "number" name = "cholesterol" id = "cholesterol" required = "required">
+            
+            <!-- Blood Sugar -->
+            <h3>Is your Blood Sugar > 120? (mm Hg)</h3><select name = "blood_sugar" id = "blood_sugar" required = "required">
+                <option value = "0">No</option>
+                <option value = "1">Yes</option>
+                </select>
+                
+            <!-- electrocardiographic -->
+            <h3>Resting Electrocardiographic Results</h3><select name = "electrocardiographic" id = "electrocardiographic" required = "required">
+                <option value = "0">0</option>
+                <option value = "1">1</option>
+                <option value = "2">2</option>
+                </select>
+                
+            <!-- Heart Rate -->
+            <h3>Maximum Heart Rate Achieved</h3><input type = "number" name = "heart_rate" id = "heart_rate" required = "required">
+            
+            <!-- Exercise -->
+            <h3>Exercise induced angina?</h3><select name = "exercise" id = "exercise" required = "required">
+                <option value = "0">No</option>
+                <option value = "1">Yes</option>
+                </select>
+                   
+            <!-- Old Peak -->
+            <h3>Previous Peak</h3><input type = "float" name = "old_peak" id = "old_peak" required = "required">
+            
+            <!-- Slope -->
+            <h3>What is the slope?</h3><select name = "slope" id = "slope" required = "required">
+                <option value = "0">0</option>
+                <option value = "1">1</option>
+                <option value = "2">2</option>
+                </select>
+                
+            <!-- Number Vessels -->
+            <h3>What is the number of vessels?</h3><select name = "number_vessels" id = "number_vessels" required = "required">
+                <option value = "0">0</option>
+                <option value = "1">1</option>
+                <option value = "2">2</option>
+                <option value = "3">3</option>
+                <option value = "4">4</option>
+                </select>
+                
+            <!-- Thal Rate -->
+            <h3>What is the Thal Rate?</h3><select name = "thal_rate" id = "thal_rate" required = "required">
+                <option value = "0">0</option>
+                <option value = "1">1</option>
+                <option value = "2">2</option>
+                <option value = "3">3</option>
+                </select>
+        
+            <br><br>
+        
+            <button type = "submit" value = "submit" id = "sub">Check Result</button>
+
+        </form>
+
+        <br><br><h2>{{prediction}}</h2>
+        
+    </div>
+    
+    <style>
+    
+        
+        body {
+            background-color: black;
+            text-align: center;
+            padding: 0px;
+        }
+            
+        #sex {
+            width: 70px;
+            height: 25px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 14px;
+        }
+        
+        #sex:hover {
+            background-color: darkcyan;
+        }
+        
+        #chest_pain {
+            width: 70px;
+            height: 25px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 14px;
+        }
+        
+        #chest_pain:hover {
+            background-color: darkcyan;
+        }
+        
+        #age {
+            width: 70px;
+            height: 25px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #age:hover {
+            background-color: darkcyan;
+        }
+        
+        #blood_pressure {
+            width: 70px;
+            height: 25px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #blood_pressure:hover {
+            background-color: darkcyan;
+        }
+        
+        #sub {
+            width: 160px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #sub:hover {
+            background-color: darkcyan;
+        }
+        
+        #cholesterol {
+            border-radius: 14px;
+            width:70px;
+            height: 25px;
+            font-size: 14px;
+            text-align: center;
+        }
+        
+        #cholesterol:hover {
+            background-color: darkcyan;
+        }
+        
+        #blood_sugar {
+            border-radius: 14px;
+            width: 70px;
+            height: 25px;
+            font-size: 14px;
+            text-align: center;
+        }
+        
+        #blood_sugar:hover {
+            background-color: darkcyan;
+        }
+        
+        #electrocardiographic {
+            border-radius: 14px;
+            width: 70px;
+            height: 25px;
+            font-size: 14px;
+            text-align: center;
+        }
+        
+        #electrocardiographic:hover {
+            background-color: darkcyan;
+        }
+        
+        #heart_rate {
+            border-radius: 14px;
+            width: 70px;
+            height: 25px;
+            font-size: 14px;
+            text-align: center;
+        }
+        
+        #heart_rate:hover {
+            background-color: darkcyan;
+        }
+        
+        #exercise {
+            border-radius: 14px;
+            width: 70px;
+            heaight: 25px;
+            font-size: 14px;
+            text-align: center;
+        }
+        
+        #exercise:hover {
+            background-color: darkcyan;
+        }
+        
+        #old_peak {
+            border-radius: 14px;
+            width: 70px;
+            heaight: 25px;
+            font-size: 14px;
+            text-align: center;
+        }
+        
+        #old_peak:hover {
+            background-color: darkcyan;
+        }
+        
+        #slope {
+            border-radius: 14px;
+            width: 70px;
+            heaight: 25px;
+            font-size: 14px;
+            text-align: center;
+        }
+        
+        #slope:hover {
+            background-color: darkcyan;
+        }
+        
+        #number_vessels {
+            border-radius: 14px;
+            width: 70px;
+            heaight: 25px;
+            font-size: 14px;
+            text-align: center;
+        }
+        
+        #number_vessels:hover {
+            background-color: darkcyan;
+        }
+        
+        #thal_rate {
+            border-radius: 14px;
+            width: 70px;
+            heaight: 25px;
+            font-size: 14px;
+            text-align: center;
+        }
+        
+        #thal_rate:hover {
+            background-color: darkcyan;
+        }
+    
+    
+    
+    </style>
+
+
+</body>
+
+
+
+
+</html>
