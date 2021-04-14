@@ -2,16 +2,8 @@ distributed==2.1.0
 gunicorn==20.1.0
 itsdangerous==1.1.0
 Jinja2==2.10.1
-json5==0.8.4
-jsonify==0.5
-jupyter==1.0.0
 MarkupSafe==1.1.1
 matplotlib>=3.1.1
-notebook==6.0.0
 numpy>=1.16.4
 pandas>=0.24.2
-plotly==4.6.0
-requests==2.22.0
-seaborn==0.9.0
-spyder==3.3.6
 Werkzeug==0.15.4
