@@ -1,5 +1,4 @@
 distributed==2.1.0
-greenlet==0.4.15
 gunicorn==20.1.0
 itsdangerous==1.1.0
 Jinja2==2.10.1
@@ -8,16 +7,11 @@ jsonify==0.5
 jupyter==1.0.0
 MarkupSafe==1.1.1
 matplotlib>=3.1.1
-nbconvert==5.5.0
-nbformat==4.4.0
 notebook==6.0.0
 numpy>=1.16.4
-packaging==19.0
 pandas>=0.24.2
 plotly==4.6.0
 requests==2.22.0
 seaborn==0.9.0
 spyder==3.3.6
-spyder-kernels==0.5.1
-statsmodels==0.10.0
 Werkzeug==0.15.4
